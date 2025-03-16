@@ -1,15 +1,15 @@
-# iDempiere Code of Conduct
+# Sleektiv ERP Community Code of Conduct
 
 ## Purpose
 
-A primary goal of iDempiere is to be inclusive to the largest number of contributors, 
+A primary goal of Sleektiv ERP Community is to be inclusive to the largest number of contributors, 
 with the most varied and diverse backgrounds possible. As such, we are committed to providing 
 a friendly, safe and welcoming environment for all, regardless of gender, sexual orientation, 
 ability, ethnicity, socioeconomic status, and religion (or lack thereof). 
 This code of conduct outlines our expectations for all those who participate in our community, 
 as well as the consequences for unacceptable behavior.
 
-We invite all those who participate in iDempiere to help us create safe and positive experiences for everyone.
+We invite all those who participate in Sleektiv ERP Community to help us create safe and positive experiences for everyone.
 
 ## Our Communication Guidelines
 
@@ -23,8 +23,6 @@ If you want something to orientate, use these:
 * Personal attacks on others are not nice (but may be funny).
 * Do not post if you do not have anything constructive to say in the post.
 * Challenge others' points of view and opinions, but do so respectfully and thoughtfully ... without insult and personal attack. Differing opinions is one of the things that make this site great.
-* The best place for your question is the [project's forum][forum]. We get a large number of emails. If your email contains a question about iDempiere we will kindly point you to the forums.
-* There is no selling allowed in the forums.
 * Avoid demanding contributions or cooperation from others.
 * Avoid blaming anybody for not contributing or cooperating.
 * When you want to post in another language please use appropiate sub-wiki.
@@ -66,6 +64,4 @@ members of the project's leadership.
 ## Attribution
 This Code of Conduct is adapted from the Contributor Covenant, version 1.4,
 available at https://www.contributor-covenant.org/version/1/4/code-of-conduct.html
-
-[forum]: http://groups.google.com/group/idempiere
 
