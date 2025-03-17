@@ -19,7 +19,7 @@
 		description="initialization target">
 
 		<echo message="Sleektiv Server Setup ===================" />
-		<echo message="IDEMPIERE_HOME = ${env.IDEMPIERE_HOME}" />
+		<echo message="SLEEKTIV_HOME = ${env.SLEEKTIV_HOME}" />
 
 		<!-- create the time stamp and environment -->
 		<tstamp />

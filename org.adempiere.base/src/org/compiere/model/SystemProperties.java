@@ -39,8 +39,8 @@ public class SystemProperties {
 	private static final String Cache_ExpireMinute = "Cache.ExpireMinute";
 	private static final String Cache_MaxSize = "Cache.MaxSize";
 	private static final String Cache_MaxSize_Per_Table_Prefix = "Cache.MaxSize.";
-	private static final String env_IDEMPIERE_HOME = Ini.ENV_PREFIX + Ini.IDEMPIERE_HOME;
-	private static final String IDEMPIERE_HOME = Ini.IDEMPIERE_HOME;
+	private static final String env_SLEEKTIV_HOME = Ini.ENV_PREFIX + Ini.SLEEKTIV_HOME;
+	private static final String SLEEKTIV_HOME = Ini.SLEEKTIV_HOME;
 	private static final String IDEMPIERE_SECURE_PROPERTIES = "IDEMPIERE_SECURE_PROPERTIES";
 	private static final String LogLevel = "LogLevel";
 	private static final String org_adempiere_po_useTimeoutForUpdate = "org.adempiere.po.useTimeoutForUpdate";
@@ -102,27 +102,27 @@ public class SystemProperties {
 	}
 
 	/**
-	 * env.IDEMPIERE_HOME to define the home of iDempiere server instance
+	 * env.SLEEKTIV_HOME to define the home of iDempiere server instance
 	 * @return
 	 */
 	public static String getEnvIdempiereHome() {
-		return System.getProperty(env_IDEMPIERE_HOME);
+		return System.getProperty(env_SLEEKTIV_HOME);
 	}
 
 	/**
-	 * IDEMPIERE_HOME to define the home of iDempiere server instance
+	 * SLEEKTIV_HOME to define the home of iDempiere server instance
 	 * @return
 	 */
 	public static String getIdempiereHome() {
-		return System.getProperty(IDEMPIERE_HOME);
+		return System.getProperty(SLEEKTIV_HOME);
 	}
 
 	/**
-	 * IDEMPIERE_HOME to define the home of iDempiere server instance
+	 * SLEEKTIV_HOME to define the home of iDempiere server instance
 	 * @return
 	 */
 	public static String setIdempiereHome(String idempiereHome) {
-		return System.setProperty(IDEMPIERE_HOME, idempiereHome);
+		return System.setProperty(SLEEKTIV_HOME, idempiereHome);
 	}
 
 	/**

@@ -15,20 +15,20 @@ else
     READLINK_CMD="readlink"
 fi
 
-# Set IDEMPIERE_HOME using the appropriate readlink command
-IDEMPIERE_HOME=$( dirname "$($READLINK_CMD -f "${BASH_SOURCE[0]}")" )
+# Set SLEEKTIV_HOME using the appropriate readlink command
+SLEEKTIV_HOME=$( dirname "$($READLINK_CMD -f "${BASH_SOURCE[0]}")" )
 
 if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
     echo "
 Usage: ${BASH_SOURCE[0]} [property_file] [migration_folder]
 
-Called without parameters, it tries to get the database connection information from the file $IDEMPIERE_HOME/idempiere.properties.
+Called without parameters, it tries to get the database connection information from the file $SLEEKTIV_HOME/idempiere.properties.
 This requires that install.app or install.console.app has been previously executed in Eclipse.
 
 If the first parameter is a file, then the script tries to obtain the connection information from that properties file.
 
 Optionally, you can pass one or more migration folders at the end to process them.
-If no migration folder is passed, it processes the folder $IDEMPIERE_HOME/migration.
+If no migration folder is passed, it processes the folder $SLEEKTIV_HOME/migration.
 
 When called with parameter -h or --help, it prints this help message."
     exit 0
@@ -42,18 +42,18 @@ if [ "$#" -gt 0 ]; then
 fi
 
 if [ -z "$PROPFILE" ]; then
-    if [ -s "$IDEMPIERE_HOME/idempiere.properties" ]; then
-        PROPFILE="$IDEMPIERE_HOME/idempiere.properties"
+    if [ -s "$SLEEKTIV_HOME/idempiere.properties" ]; then
+        PROPFILE="$SLEEKTIV_HOME/idempiere.properties"
     fi
 fi
 
 if [ -z "$PROPFILE" ]; then
-    echo "There is no idempiere.properties in folder $IDEMPIERE_HOME.
+    echo "There is no idempiere.properties in folder $SLEEKTIV_HOME.
 Please run install.app or install.console.app within Eclipse first."
     exit 1
 fi
 
-cd "$IDEMPIERE_HOME" || (echo "Cannot cd to $IDEMPIERE_HOME"; exit 1)
+cd "$SLEEKTIV_HOME" || (echo "Cannot cd to $SLEEKTIV_HOME"; exit 1)
 
 CONN=$(grep "^Connection=.*type" "$PROPFILE")
 if [ -z "$CONN" ]; then
@@ -70,12 +70,12 @@ if [ "x$ADEMPIERE_DB_USER" = "x" ]; then
 fi
 ADEMPIERE_DB_PASSWORD="$(expr "$CONN" : ".*PWD.=\(.*\)]")"
 if [ "x$ADEMPIERE_DB_PASSWORD" = "x" ]; then
-    ADEMPIERE_DB_PASSWORD="$( $IDEMPIERE_HOME/org.adempiere.server-feature/utils.unix/getVar.sh ADEMPIERE_DB_PASSWORD )"
+    ADEMPIERE_DB_PASSWORD="$( $SLEEKTIV_HOME/org.adempiere.server-feature/utils.unix/getVar.sh ADEMPIERE_DB_PASSWORD )"
 fi
 ADEMPIERE_DB_PATH="$(expr "$CONN" : ".*type.=\(.*\),DBhost.=")"
 ADEMPIERE_DB_PATH=$(echo "$ADEMPIERE_DB_PATH" | tr '[:upper:]' '[:lower:]')  # Convert to lowercase
 
-export IDEMPIERE_HOME
+export SLEEKTIV_HOME
 export ADEMPIERE_DB_NAME
 export ADEMPIERE_DB_SERVER
 export ADEMPIERE_DB_PORT

@@ -13,10 +13,10 @@ then
     exit 1
 fi
 
-# IDEMPIERE_HOME must be unset
-if `env | grep -q IDEMPIERE_HOME`
+# SLEEKTIV_HOME must be unset
+if `env | grep -q SLEEKTIV_HOME`
 then
-	unset IDEMPIERE_HOME
+	unset SLEEKTIV_HOME
 fi
 
 # Check for sufficient diskspace

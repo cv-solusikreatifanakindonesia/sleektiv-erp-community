@@ -9,10 +9,10 @@ echo "==================================="
 
 JAVA_HOME=@JAVA_HOME@
 export JAVA_HOME
-IDEMPIERE_HOME=@IDEMPIERE_HOME@
-export IDEMPIERE_HOME
+SLEEKTIV_HOME=@SLEEKTIV_HOME@
+export SLEEKTIV_HOME
 
-echo "\$JAVA_HOME is set to $JAVA_HOME and \$IDEMPIERE_HOME is set to $IDEMPIERE_HOME"
+echo "\$JAVA_HOME is set to $JAVA_HOME and \$SLEEKTIV_HOME is set to $SLEEKTIV_HOME"
 
 # ORACLE_HOME=/var/oracle/OraHome92
 # export ORACLE_HOME

@@ -9,13 +9,13 @@
 @Rem	In Germany, it is %DATE:~3,2%
 @Rem    For USA, the following alternative formatting works: %date:~10,4%%date:~7,2%%date:~4,2%_%time:~0,2%%time:~3,2%%time:~6,2%
 @Rem	When called, the following files were created:
-@Rem		%IDEMPIERE_HOME%\data\ExpDat.dmp
-@Rem		%IDEMPIERE_HOME%\data\ExpDat.log
-@Rem		%IDEMPIERE_HOME%\data\ExpDat.jar (containing the above)
+@Rem		%SLEEKTIV_HOME%\data\ExpDat.dmp
+@Rem		%SLEEKTIV_HOME%\data\ExpDat.log
+@Rem		%SLEEKTIV_HOME%\data\ExpDat.jar (containing the above)
 
 @set DATETIME=%date:~6,4%%date:~3,2%%date:~0,2%_%TIME:~0,2%%TIME:~3,2%%TIME:~6,2%
 @Echo Creating ExpDat_%DATETIME%.jar
 ren ExpDat.jar "ExpDat%DATETIME%.jar"
 @dir ExpDat%DATETIME%.jar
 
-@Echo copy %IDEMPIERE_HOME%\data\ExpDat%DATETIME%.jar to backup media
+@Echo copy %SLEEKTIV_HOME%\data\ExpDat%DATETIME%.jar to backup media

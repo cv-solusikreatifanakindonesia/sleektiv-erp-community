@@ -26,6 +26,12 @@ Author URI: http://www.bmlaurus.com
 				</div>
 			</div>
 			<div id="toolBar-tools" class="toolBar-tools">
+				<a href="<%=Prop.getProperty(Prop.WEBUI_LINK)%>"  target="_blank">
+					<img name="img_option" src="<%=Prop.getImage("img_lock.svg")%>" style="width:40px;" border="0" title="<%=Prop.getProperty(Prop.WEBUI_TEXT)%>"/>
+				</a>
+			</div>
+			<!--
+			<div id="toolBar-tools" class="toolBar-tools">
 				<a href="<%=Prop.getProperty(Prop.OPTION_LINK)%>"  target="_blank">
 					<img name="img_option" src="<%=Prop.getImage("img_option.png")%>" border="0" title="<%=Prop.getProperty(Prop.OPTION_TEXT)%>"/>
 				</a>
@@ -36,9 +42,11 @@ Author URI: http://www.bmlaurus.com
 					<img name="img_idempiereMonitor" src="<%=Prop.getImage("img_idempiereMonitor.png")%>" border="0" title="<%=Prop.getProperty(Prop.MONITOR_TEXT)%>"/>
 				</a>
 			</div>
+			-->
 		</div>
 		<div id ="main" class="main">
 			<div id="main-content" class="main-content">
+				<!--
 				<div id="main-docuBtns">
 					<ul>
 						<li id="main-requestBtns-btnLogin">
@@ -91,12 +99,15 @@ Author URI: http://www.bmlaurus.com
 						</li>
 					</ul>
 				</div>
+				-->
 				<div id="main-background">
 					<img name="img_background" src="<%=Prop.getImage("img_back.jpg")%>" border="0"/>
 				</div>
 			</div>
 		</div>
+		
 		<div id="foot" class="foot">
+			<!--
 			<div id="socialBar" class="socialBar">
 				<%if(!Prop.getProperty(Prop.SOC_FACEBOOK).equals("") && !Prop.getProperty(Prop.SOC_FACEBOOK).equals("NONE")){%>
 					<a id="facebook" href="<%=Prop.getProperty(Prop.SOC_FACEBOOK)%>" target="_blank">
@@ -128,9 +139,10 @@ Author URI: http://www.bmlaurus.com
 					</a>
 				<%}%>
 			</div>
+			-->
 			<div id="footercopyright">
-				<p>&copy; Copyright 2013-<%=Prop.getYear()%> iDempiere - All rights reserved</p>
-				<p><a href="http://www.gnu.org/licenses/gpl-2.0.html" target="blank">iDempiere License is GPLv2</a></p>
+				<p>Developed by 2025-<%=Prop.getYear()%> Sleektiv Team</p>
+				<p><a href="http://www.gnu.org/licenses/gpl-2.0.html" target="blank">Sleektiv ERP Community Version 1 License is GPLv2</a></p>
 				<%=Prop.getProperty(Prop.COPYRIGHT_TXT)%>
 			</div>
 		</div>

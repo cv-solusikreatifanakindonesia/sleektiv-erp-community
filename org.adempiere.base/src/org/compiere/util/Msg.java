@@ -293,7 +293,7 @@ public final class Msg
 			return File.separator;
 		if (text.equals(";") || text.equals(":"))
 			return File.pathSeparator;
-		if (text.equals("IDEMPIERE_HOME"))
+		if (text.equals("SLEEKTIV_HOME"))
 			return Adempiere.getAdempiereHome();
 		if (text.equals("bat") || text.equals("sh"))
 		{

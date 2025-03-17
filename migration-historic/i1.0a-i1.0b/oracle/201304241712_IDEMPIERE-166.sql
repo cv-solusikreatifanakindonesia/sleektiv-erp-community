@@ -699,7 +699,7 @@ UPDATE ad_element
 
 UPDATE ad_element
    SET HELP =
-          'If your appplication requires additional jar files, enter them here. The jar files must be located in the $IDEMPIERE_HOME/lib directory.'
+          'If your appplication requires additional jar files, enter them here. The jar files must be located in the $SLEEKTIV_HOME/lib directory.'
  WHERE ad_element_id = 3054;
 
 UPDATE ad_element
@@ -1438,7 +1438,7 @@ UPDATE ad_field
 
 UPDATE ad_field
    SET HELP =
-          'If your appplication requires additional jar files, enter them here. The jar files must be located in the $IDEMPIERE_HOME/lib directory.'
+          'If your appplication requires additional jar files, enter them here. The jar files must be located in the $SLEEKTIV_HOME/lib directory.'
  WHERE ad_field_id = 13498;
 
 UPDATE ad_field
@@ -1676,11 +1676,11 @@ UPDATE ad_table
  WHERE ad_table_id = 594;
 
 UPDATE ad_task
-   SET os_command = '@IDEMPIERE_HOME@@/@utils@/@RUN_DBExport.@bat@'
+   SET os_command = '@SLEEKTIV_HOME@@/@utils@/@RUN_DBExport.@bat@'
  WHERE ad_task_id = 103;
 
 UPDATE ad_task
-   SET os_command = '@IDEMPIERE_HOME@@/@utils@/@RUN_PutiDempiere.@sh@'
+   SET os_command = '@SLEEKTIV_HOME@@/@utils@/@RUN_PutiDempiere.@sh@'
  WHERE ad_task_id = 104;
 
 UPDATE ad_usermail

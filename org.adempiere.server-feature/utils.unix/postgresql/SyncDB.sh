@@ -13,10 +13,10 @@ if [ $# -eq 0 ]
     echo "Example:	$0 adempiere adempiere"
     exit 1
 fi
-if [ "$IDEMPIERE_HOME" = "" ] || [ "$ADEMPIERE_DB_NAME" = "" ] || [ "$ADEMPIERE_DB_SERVER" = "" ] || [ "$ADEMPIERE_DB_PORT" = "" ]
+if [ "$SLEEKTIV_HOME" = "" ] || [ "$ADEMPIERE_DB_NAME" = "" ] || [ "$ADEMPIERE_DB_SERVER" = "" ] || [ "$ADEMPIERE_DB_PORT" = "" ]
   then
     echo "Please make sure that the environment variables are set correctly:"
-    echo "	IDEMPIERE_HOME	e.g. /idempiere"
+    echo "	SLEEKTIV_HOME	e.g. /idempiere"
     echo "	ADEMPIERE_DB_NAME	e.g. adempiere or xe"
     echo "  ADEMPIERE_DB_SERVER e.g. dbserver.adempiere.org"
     echo "  ADEMPIERE_DB_PORT e.g. 5432 or 1521"
@@ -32,16 +32,16 @@ ADEMPIERE_DB_PATH=$3
 CMD="psql -b -h $ADEMPIERE_DB_SERVER -p $ADEMPIERE_DB_PORT -d $ADEMPIERE_DB_NAME -U $ADEMPIERE_DB_USER -b"
 SILENTCMD="$CMD -q -t"
 ERROR_STRINGS="^(ERROR:|FEHLER:|FATAL:|ERRO:)"
-DIR_POST=$IDEMPIERE_HOME/migration
+DIR_POST=$SLEEKTIV_HOME/migration
 if [ "x$4" = "x" ]
 then
-    DIR_SCRIPTS=$IDEMPIERE_HOME/migration
+    DIR_SCRIPTS=$SLEEKTIV_HOME/migration
 else
     if [ "${4:0:1}" = "/" ]
     then
         DIR_SCRIPTS="$4"
     else
-        DIR_SCRIPTS="$IDEMPIERE_HOME/$4"
+        DIR_SCRIPTS="$SLEEKTIV_HOME/$4"
     fi
 fi
 

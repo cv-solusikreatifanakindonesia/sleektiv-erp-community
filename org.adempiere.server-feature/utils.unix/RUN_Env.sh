@@ -3,8 +3,8 @@
 # $Id: RUN_Env.sh,v 1.16 2005/01/22 21:59:15 jjanke Exp $
 echo idempiere Environment Check
 
-if [ "$IDEMPIERE_HOME" ]; then
-    cd "$IDEMPIERE_HOME"/utils || (echo "Cannot cd $IDEMPIERE_HOME/utils"; exit 1)
+if [ "$SLEEKTIV_HOME" ]; then
+    cd "$SLEEKTIV_HOME"/utils || (echo "Cannot cd $SLEEKTIV_HOME/utils"; exit 1)
 fi
 # Environment is read from the following script myEnvironment.sh
 . ./myEnvironment.sh
@@ -15,7 +15,7 @@ echo CLASSPTH  = "$CLASSPATH"
 
 echo .
 echo Homes ...
-echo IDEMPIERE_HOME        = "$IDEMPIERE_HOME"
+echo SLEEKTIV_HOME        = "$SLEEKTIV_HOME"
 echo JAVA_HOME            = "$JAVA_HOME"
 echo ADEMPIERE_DB_URL      = "$ADEMPIERE_DB_URL"
 

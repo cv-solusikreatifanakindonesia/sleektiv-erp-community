@@ -34,7 +34,7 @@ import org.osgi.service.component.runtime.dto.ComponentDescriptionDTO;
 
 /**
  * Service listener to block the loading of OSGi component. <br/>
- * To block the loading of an OSGi component, append the OSGi component's component name to {IDEMPIERE_HOME}/components.blacklist file.
+ * To block the loading of an OSGi component, append the OSGi component's component name to {SLEEKTIV_HOME}/components.blacklist file.
  * @author hengsin
  *
  */

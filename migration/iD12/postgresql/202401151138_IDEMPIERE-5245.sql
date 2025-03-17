@@ -60,7 +60,7 @@ The ID is related 1 to 1 to the container ID',Updated=TO_TIMESTAMP('2024-01-15 1
 ;
 
 -- Jan 15, 2024, 11:58:46 AM CET
-UPDATE AD_Element SET Help='If your application requires additional jar files, enter them here. The jar files must be located in the $IDEMPIERE_HOME/lib directory.',Updated=TO_TIMESTAMP('2024-01-15 11:58:46','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=100 WHERE AD_Element_ID=3054
+UPDATE AD_Element SET Help='If your application requires additional jar files, enter them here. The jar files must be located in the $SLEEKTIV_HOME/lib directory.',Updated=TO_TIMESTAMP('2024-01-15 11:58:46','YYYY-MM-DD HH24:MI:SS'),UpdatedBy=100 WHERE AD_Element_ID=3054
 ;
 
 -- Jan 15, 2024, 11:59:52 AM CET

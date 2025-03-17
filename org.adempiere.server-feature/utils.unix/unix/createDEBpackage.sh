@@ -8,14 +8,14 @@
 
 TMP=/tmp
 cd "$(dirname "$0")"/../../.. || exit
-IDEMPIERE_HOME=$(pwd)
-RWD=$IDEMPIERE_HOME/idempiere-server/utils/unix
-PACKAGE=$(ls -d "$IDEMPIERE_HOME")
+SLEEKTIV_HOME=$(pwd)
+RWD=$SLEEKTIV_HOME/idempiere-server/utils/unix
+PACKAGE=$(ls -d "$SLEEKTIV_HOME")
 PACKAGE=$(basename "$PACKAGE")
 # VERSION=dev
 # TIMESTAMP=$(date +%Y%m%d)
-# PACKFILE=$IDEMPIERE_HOME/../${PACKAGE}_${VERSION}_${TIMESTAMP}.deb
-PACKFILE=$IDEMPIERE_HOME/../${PACKAGE}.deb
+# PACKFILE=$SLEEKTIV_HOME/../${PACKAGE}_${VERSION}_${TIMESTAMP}.deb
+PACKFILE=$SLEEKTIV_HOME/../${PACKAGE}.deb
 find "$RWD"/../.. -name "*.sh" -exec chmod +x {} \;
 chmod +x "$RWD"/DebianInstaller/etc/init.d/idempiere
 rm -f $TMP/debian-binary $TMP/control.tar.gz $TMP/data.tar.gz $TMP/control.tar $TMP/data.tar "$PACKFILE"

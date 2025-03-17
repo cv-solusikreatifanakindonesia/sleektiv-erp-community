@@ -38,12 +38,12 @@ esac
 # initialization
 # adjust these variables to your environment
 IDEMPIERE_USER=idempiere
-IDEMPIERE_HOME=/opt/idempiere-server
+SLEEKTIV_HOME=/opt/idempiere-server
 # in case you manual install java by use zip or your linux distros, or your java provider have difference pattern of path, please update here
 JAVA_HOME=$(ls -r /usr/lib/jvm/java-1[7]-openjdk*/bin/javac | head -1)
 JAVA_HOME=$(dirname $( dirname "$JAVA_HOME") )
 SU=su
-export IDEMPIERE_HOME
+export SLEEKTIV_HOME
 export TELNET_PORT=12612
 
 if [ "$(id -u)" != "0" ]
@@ -197,28 +197,28 @@ EOF
 # Import database
 configure_perform()
 {
-    cp ${IDEMPIERE_HOME}/idempiereEnvTemplate.properties ${IDEMPIERE_HOME}/idempiereEnv.properties
-    sed -i "s:^IDEMPIERE_HOME=.*:IDEMPIERE_HOME=${IDEMPIERE_HOME}:" ${IDEMPIERE_HOME}/idempiereEnv.properties
-    sed -i "s:^JAVA_HOME=.*:JAVA_HOME=${JAVA_HOME}:" ${IDEMPIERE_HOME}/idempiereEnv.properties
-    sed -i "s:^ADEMPIERE_DB_PASSWORD=.*:ADEMPIERE_DB_PASSWORD=${ADEMPIERE_DB_PASSWORD}:" ${IDEMPIERE_HOME}/idempiereEnv.properties
-    sed -i "s:^ADEMPIERE_DB_SYSTEM=.*:ADEMPIERE_DB_SYSTEM=${ADEMPIERE_DB_SYSTEM}:" ${IDEMPIERE_HOME}/idempiereEnv.properties
-    sed -i "s:^ADEMPIERE_WEB_PORT=.*:ADEMPIERE_WEB_PORT=${ADEMPIERE_WEB_PORT}:" ${IDEMPIERE_HOME}/idempiereEnv.properties
-    sed -i "s:^ADEMPIERE_SSL_PORT=.*:ADEMPIERE_SSL_PORT=${ADEMPIERE_SSL_PORT}:" ${IDEMPIERE_HOME}/idempiereEnv.properties
-    sed -i "s:^ADEMPIERE_APPS_SERVER=.*:ADEMPIERE_APPS_SERVER=0.0.0.0:" ${IDEMPIERE_HOME}/idempiereEnv.properties
-    sed -i "s:^ADEMPIERE_KEYSTORE=.*:ADEMPIERE_KEYSTORE=${IDEMPIERE_HOME}/keystore/myKeystore:" ${IDEMPIERE_HOME}/idempiereEnv.properties
-    chown idempiere:idempiere ${IDEMPIERE_HOME}/idempiereEnv.properties
-    chmod 600 ${IDEMPIERE_HOME}/idempiereEnv.properties
+    cp ${SLEEKTIV_HOME}/idempiereEnvTemplate.properties ${SLEEKTIV_HOME}/idempiereEnv.properties
+    sed -i "s:^SLEEKTIV_HOME=.*:SLEEKTIV_HOME=${SLEEKTIV_HOME}:" ${SLEEKTIV_HOME}/idempiereEnv.properties
+    sed -i "s:^JAVA_HOME=.*:JAVA_HOME=${JAVA_HOME}:" ${SLEEKTIV_HOME}/idempiereEnv.properties
+    sed -i "s:^ADEMPIERE_DB_PASSWORD=.*:ADEMPIERE_DB_PASSWORD=${ADEMPIERE_DB_PASSWORD}:" ${SLEEKTIV_HOME}/idempiereEnv.properties
+    sed -i "s:^ADEMPIERE_DB_SYSTEM=.*:ADEMPIERE_DB_SYSTEM=${ADEMPIERE_DB_SYSTEM}:" ${SLEEKTIV_HOME}/idempiereEnv.properties
+    sed -i "s:^ADEMPIERE_WEB_PORT=.*:ADEMPIERE_WEB_PORT=${ADEMPIERE_WEB_PORT}:" ${SLEEKTIV_HOME}/idempiereEnv.properties
+    sed -i "s:^ADEMPIERE_SSL_PORT=.*:ADEMPIERE_SSL_PORT=${ADEMPIERE_SSL_PORT}:" ${SLEEKTIV_HOME}/idempiereEnv.properties
+    sed -i "s:^ADEMPIERE_APPS_SERVER=.*:ADEMPIERE_APPS_SERVER=0.0.0.0:" ${SLEEKTIV_HOME}/idempiereEnv.properties
+    sed -i "s:^ADEMPIERE_KEYSTORE=.*:ADEMPIERE_KEYSTORE=${SLEEKTIV_HOME}/keystore/myKeystore:" ${SLEEKTIV_HOME}/idempiereEnv.properties
+    chown idempiere:idempiere ${SLEEKTIV_HOME}/idempiereEnv.properties
+    chmod 600 ${SLEEKTIV_HOME}/idempiereEnv.properties
 
     sed -i "s/:8080/:${ADEMPIERE_WEB_PORT}/g" /usr/share/applications/idempiere-homepage.desktop
     sed -i "s/:8443/:${ADEMPIERE_SSL_PORT}/g" /usr/share/applications/idempiere-webclient.desktop
 
-    if [ -f ${IDEMPIERE_HOME}/silent-setup.sh ]
+    if [ -f ${SLEEKTIV_HOME}/silent-setup.sh ]
     then
      	echo -n "Deploying iDempiere ERP server..."
-       	$SU ${IDEMPIERE_USER} -c "cd ${IDEMPIERE_HOME}; ./silent-setup.sh"
+       	$SU ${IDEMPIERE_USER} -c "cd ${SLEEKTIV_HOME}; ./silent-setup.sh"
 	echo "Done"
     fi
-    grep "${ADEMPIERE_WEB_PORT}" ${IDEMPIERE_HOME}/jettyhome/etc/jetty-http.xml > /dev/null 2>&1
+    grep "${ADEMPIERE_WEB_PORT}" ${SLEEKTIV_HOME}/jettyhome/etc/jetty-http.xml > /dev/null 2>&1
     if [ $? -ne 0 ]
     then
         echo "Error deploying iDempiere, please verify and try again"
@@ -233,16 +233,16 @@ configure_perform()
         $SU postgres -c "cd; psql -U postgres -c \"CREATE ROLE adempiere SUPERUSER LOGIN PASSWORD '${ADEMPIERE_DB_PASSWORD}'\"" # > /dev/null 2>&1
     fi
 
-    if [ -f ${IDEMPIERE_HOME}/utils/RUN_ImportIdempiere.sh ]
+    if [ -f ${SLEEKTIV_HOME}/utils/RUN_ImportIdempiere.sh ]
     then
         echo -n "Importing seed database..."
-       	$SU ${IDEMPIERE_USER} -c "cd ${IDEMPIERE_HOME}/utils; ( echo "" | ./RUN_ImportIdempiere.sh )" # > /dev/null 2>&1
+       	$SU ${IDEMPIERE_USER} -c "cd ${SLEEKTIV_HOME}/utils; ( echo "" | ./RUN_ImportIdempiere.sh )" # > /dev/null 2>&1
 	echo "Done"
         echo -n "Applying latest migration scripts ..."
-       	$SU ${IDEMPIERE_USER} -c "cd ${IDEMPIERE_HOME}/utils; ./RUN_SyncDB.sh" # > /dev/null 2>&1
+       	$SU ${IDEMPIERE_USER} -c "cd ${SLEEKTIV_HOME}/utils; ./RUN_SyncDB.sh" # > /dev/null 2>&1
 	echo "Done"
         echo -n "Signing DB ..."
-       	$SU ${IDEMPIERE_USER} -c "cd ${IDEMPIERE_HOME}; ./sign-database-build.sh" # > /dev/null 2>&1
+       	$SU ${IDEMPIERE_USER} -c "cd ${SLEEKTIV_HOME}; ./sign-database-build.sh" # > /dev/null 2>&1
 	echo "Done"
     fi
     $SU ${IDEMPIERE_USER} -c "cd; export PGPASSWORD=${ADEMPIERE_DB_PASSWORD}; psql -d idempiere -U adempiere -h localhost -p 5432 -c ''" > /dev/null 2>&1
@@ -258,7 +258,7 @@ configure_perform()
         exit 1
     fi
 
-    chmod 700 ${IDEMPIERE_HOME}/utils/myEnvironment.*
+    chmod 700 ${SLEEKTIV_HOME}/utils/myEnvironment.*
 
     echo "Installation Completed Successfully."
 
@@ -507,8 +507,8 @@ Enter postgres password:"
 }
 
 getidempierestatus() {
-    IDEMPIERESTATUSSTRING=$(ps ax | grep java | grep ${IDEMPIERE_HOME} | grep -v grep)
-    echo "$IDEMPIERESTATUSSTRING" | grep -q ${IDEMPIERE_HOME}
+    IDEMPIERESTATUSSTRING=$(ps ax | grep java | grep ${SLEEKTIV_HOME} | grep -v grep)
+    echo "$IDEMPIERESTATUSSTRING" | grep -q ${SLEEKTIV_HOME}
     IDEMPIERESTATUS=$?
 }
 
@@ -544,9 +544,9 @@ start () {
         return 1
     fi
     echo -n "Starting iDempiere ERP: "
-    export LOGFILE=$IDEMPIERE_HOME/log/idempiere_$(date +%Y%m%d%H%M%S).log
-    $SU ${IDEMPIERE_USER} -c "mkdir -p $IDEMPIERE_HOME/log"
-    $SU ${IDEMPIERE_USER} -c "export TELNET_PORT=$TELNET_PORT;cd $IDEMPIERE_HOME;$IDEMPIERE_HOME/idempiere-server.sh &> $LOGFILE &"
+    export LOGFILE=$SLEEKTIV_HOME/log/idempiere_$(date +%Y%m%d%H%M%S).log
+    $SU ${IDEMPIERE_USER} -c "mkdir -p $SLEEKTIV_HOME/log"
+    $SU ${IDEMPIERE_USER} -c "export TELNET_PORT=$TELNET_PORT;cd $SLEEKTIV_HOME;$SLEEKTIV_HOME/idempiere-server.sh &> $LOGFILE &"
     RETVAL=$?
     if [ $RETVAL -eq 0 ] ; then
         # wait for server to be confirmed as started in logfile
@@ -592,7 +592,7 @@ stop () {
 	  return 1
     fi
     echo -n "Stopping iDempiere ERP: "
-    cd $IDEMPIERE_HOME/utils || exit
+    cd $SLEEKTIV_HOME/utils || exit
     # try shutdown from OSGi console, then direct kill with signal 15, then signal 9
     log_warning_msg "Trying shutdown from OSGi console"
     ( echo exit; echo y; sleep 5 ) | telnet localhost ${TELNET_PORT} > /dev/null 2>&1
@@ -601,14 +601,14 @@ stop () {
         log_success_msg "Service stopped with OSGi shutdown"
     else
         log_warning_msg "Trying direct kill with signal -15"
-        kill -15 -$(ps ax o pgid,command | grep ${IDEMPIERE_HOME} | grep -v grep | sed -e 's/^ *//g' | cut -f 1 -d " " | sort -u)
+        kill -15 -$(ps ax o pgid,command | grep ${SLEEKTIV_HOME} | grep -v grep | sed -e 's/^ *//g' | cut -f 1 -d " " | sort -u)
         sleep 5
         getidempierestatus
         if [ $IDEMPIERESTATUS -ne 0 ] ; then
             log_success_msg "Service stopped with kill -15"
         else
             log_warning_msg "Trying direct kill with signal -9"
-            kill -9 -$(ps ax o pgid,command | grep ${IDEMPIERE_HOME} | grep -v grep | sed -e 's/^ *//g' | cut -f 1 -d " " | sort -u)
+            kill -9 -$(ps ax o pgid,command | grep ${SLEEKTIV_HOME} | grep -v grep | sed -e 's/^ *//g' | cut -f 1 -d " " | sort -u)
             sleep 5
             getidempierestatus
             if [ $IDEMPIERESTATUS -ne 0 ] ; then
@@ -639,7 +639,7 @@ dostatus () {
     if [ $IDEMPIERESTATUS -eq 0 ] ; then
 	echo
 	echo "iDempiere is running:"
-	ps ax | grep ${IDEMPIERE_HOME} | grep -v grep | sed 's/^[[:space:]]*\([[:digit:]]*\).*:[[:digit:]][[:digit:]][[:space:]]\(.*\)/\1 \2/'
+	ps ax | grep ${SLEEKTIV_HOME} | grep -v grep | sed 's/^[[:space:]]*\([[:digit:]]*\).*:[[:digit:]][[:digit:]][[:space:]]\(.*\)/\1 \2/'
 	echo
     else
 	echo "iDempiere is stopped"

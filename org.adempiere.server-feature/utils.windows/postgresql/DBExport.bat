@@ -2,9 +2,9 @@
 
 @Rem $Id: DBExport.bat,v 1.2 2005/01/22 21:59:15 jjanke Exp $
 
-@Echo Saving database %1@%ADEMPIERE_DB_NAME% to %IDEMPIERE_HOME%\data\ExpDat.dmp
+@Echo Saving database %1@%ADEMPIERE_DB_NAME% to %SLEEKTIV_HOME%\data\ExpDat.dmp
 
-@if (%IDEMPIERE_HOME%) == () goto environment
+@if (%SLEEKTIV_HOME%) == () goto environment
 @if (%ADEMPIERE_DB_NAME%) == () goto environment
 @if (%ADEMPIERE_DB_SERVER%) == () goto environment
 @if (%ADEMPIERE_DB_PORT%) == () goto environment
@@ -12,17 +12,17 @@
 @if (%1) == () goto usage
 
 @set PGPASSWORD=%2
-pg_dump -h %ADEMPIERE_DB_SERVER% -p %ADEMPIERE_DB_PORT% -U %1 %ADEMPIERE_DB_NAME% > %IDEMPIERE_HOME%\data\ExpDat.dmp
+pg_dump -h %ADEMPIERE_DB_SERVER% -p %ADEMPIERE_DB_PORT% -U %1 %ADEMPIERE_DB_NAME% > %SLEEKTIV_HOME%\data\ExpDat.dmp
 @set PGPASSWORD=
 
-@cd %IDEMPIERE_HOME%\Data
+@cd %SLEEKTIV_HOME%\Data
 @jar cvfM ExpDat.jar ExpDat.dmp
 
 @goto end
 
 :environment
 @Echo Please make sure that the enviroment variables are set correctly:
-@Echo		IDEMPIERE_HOME	e.g. D:\ADEMPIERE2
+@Echo		SLEEKTIV_HOME	e.g. D:\ADEMPIERE2
 @Echo		ADEMPIERE_DB_NAME 	e.g. adempiere or xe
 @Echo		ADEMPIERE_DB_SERVER 	e.g. dbserver.adempiere.org
 @Echo		ADEMPIERE_DB_PORT 	e.g. 5432 or 1521

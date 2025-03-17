@@ -2,7 +2,7 @@
 
 @Echo Upgrading database %1@%ADEMPIERE_DB_NAME%
 
-@if (%IDEMPIERE_HOME%) == () goto environment
+@if (%SLEEKTIV_HOME%) == () goto environment
 @if (%ADEMPIERE_DB_NAME%) == () goto environment
 @if (%ADEMPIERE_DB_SERVER%) == () goto environment
 @if (%ADEMPIERE_DB_PORT%) == () goto environment
@@ -17,7 +17,7 @@
 
 :environment
 @Echo Please make sure that the enviroment variables are set correctly:
-@Echo		IDEMPIERE_HOME	e.g. D:\ADEMPIERE2
+@Echo		SLEEKTIV_HOME	e.g. D:\ADEMPIERE2
 @Echo		ADEMPIERE_DB_NAME 	e.g. adempiere or xe
 @Echo		ADEMPIERE_DB_SERVER 	e.g. dbserver.adempiere.org
 @Echo		ADEMPIERE_DB_PORT 	e.g. 5432 or 1521

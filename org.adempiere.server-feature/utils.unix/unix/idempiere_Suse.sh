@@ -17,13 +17,13 @@
 
 # initialization
 # adjust these variables to your environment
-IDEMPIERE_HOME=/opt/idempiere-server
+SLEEKTIV_HOME=/opt/idempiere-server
 IDEMPIEREUSER=idempiere
 export TELNET_PORT=12612
-# Instead of using ENVFILE you can set JAVA_HOME, IDEMPIERE_HOME and add JAVA_HOME/bin to PATH
+# Instead of using ENVFILE you can set JAVA_HOME, SLEEKTIV_HOME and add JAVA_HOME/bin to PATH
 # in this case you can comment the source lines for ENVFILE below
 # detected some problems with Hardy Heron ubuntu using the bash source command
-ENVFILE=$IDEMPIERE_HOME/utils/myEnvironment.sh
+ENVFILE=$SLEEKTIV_HOME/utils/myEnvironment.sh
 
 # Shell functions sourced from /etc/rc.status:
 #      rc_check         check and set local and overall rc status
@@ -58,8 +58,8 @@ IDEMPIERESTATUS=
 MAXITERATIONS=60
 
 getidempierestatus() {
-    IDEMPIERESTATUSSTRING=$(ps ax | grep java | grep ${IDEMPIERE_HOME} | grep -v grep)
-    echo "$IDEMPIERESTATUSSTRING" | grep -q ${IDEMPIERE_HOME}
+    IDEMPIERESTATUSSTRING=$(ps ax | grep java | grep ${SLEEKTIV_HOME} | grep -v grep)
+    echo "$IDEMPIERESTATUSSTRING" | grep -q ${SLEEKTIV_HOME}
     IDEMPIERESTATUS=$?
 }
 
@@ -71,12 +71,12 @@ start () {
 	return
     fi
     echo -n "Starting iDempiere ERP: "
-    cd $IDEMPIERE_HOME/utils || exit
+    cd $SLEEKTIV_HOME/utils || exit
     export ID_ENV=Server
     . $ENVFILE
-    export LOGFILE=$IDEMPIERE_HOME/log/idempiere_$(date +%Y%m%d%H%M%S).log
-    su $IDEMPIEREUSER -c "mkdir -p $IDEMPIERE_HOME/log"
-    su $IDEMPIEREUSER -c "export TELNET_PORT=$TELNET_PORT;cd $IDEMPIERE_HOME;$IDEMPIERE_HOME/idempiere-server.sh &> $LOGFILE &"
+    export LOGFILE=$SLEEKTIV_HOME/log/idempiere_$(date +%Y%m%d%H%M%S).log
+    su $IDEMPIEREUSER -c "mkdir -p $SLEEKTIV_HOME/log"
+    su $IDEMPIEREUSER -c "export TELNET_PORT=$TELNET_PORT;cd $SLEEKTIV_HOME;$SLEEKTIV_HOME/idempiere-server.sh &> $LOGFILE &"
     RETVAL=$?
     if [ $RETVAL -eq 0 ] ; then
         # wait for server to be confirmed as started in logfile
@@ -115,7 +115,7 @@ stop () {
 	return
     fi
     echo -n "Stopping iDempiere ERP: "
-    cd $IDEMPIERE_HOME/utils || exit
+    cd $SLEEKTIV_HOME/utils || exit
     export ID_ENV=Server
     . $ENVFILE
     # try shutdown from OSGi console, then direct kill with signal 15, then signal 9
@@ -126,14 +126,14 @@ stop () {
         echo "Service stopped with OSGi shutdown"
     else
         echo "Trying direct kill with signal -15"
-        kill -15 -$(ps ax o pgid,command | grep ${IDEMPIERE_HOME} | grep -v grep | sed -e 's/^ *//g' | cut -f 1 -d " " | sort -u)
+        kill -15 -$(ps ax o pgid,command | grep ${SLEEKTIV_HOME} | grep -v grep | sed -e 's/^ *//g' | cut -f 1 -d " " | sort -u)
         sleep 5
         getidempierestatus
         if [ $IDEMPIERESTATUS -ne 0 ] ; then
             echo "Service stopped with kill -15"
         else
             echo "Trying direct kill with signal -9"
-            kill -9 -$(ps ax o pgid,command | grep ${IDEMPIERE_HOME} | grep -v grep | sed -e 's/^ *//g' | cut -f 1 -d " " | sort -u)
+            kill -9 -$(ps ax o pgid,command | grep ${SLEEKTIV_HOME} | grep -v grep | sed -e 's/^ *//g' | cut -f 1 -d " " | sort -u)
             sleep 5
             getidempierestatus
             if [ $IDEMPIERESTATUS -ne 0 ] ; then
@@ -169,7 +169,7 @@ status () {
     if [ $IDEMPIERESTATUS -eq 0 ] ; then
 	echo
 	echo "iDempiere is running:"
-	ps ax | grep ${IDEMPIERE_HOME} | grep -v grep | sed 's/^[[:space:]]*\([[:digit:]]*\).*:[[:digit:]][[:digit:]][[:space:]]\(.*\)/\1 \2/'
+	ps ax | grep ${SLEEKTIV_HOME} | grep -v grep | sed 's/^[[:space:]]*\([[:digit:]]*\).*:[[:digit:]][[:digit:]][[:space:]]\(.*\)/\1 \2/'
 	echo
     else
 	echo "iDempiere is stopped"

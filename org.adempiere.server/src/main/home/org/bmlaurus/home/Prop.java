@@ -123,7 +123,7 @@ public final class Prop implements Serializable {
 		{
 			if (log.isLoggable(Level.INFO)) {
 				log.info(filename + " not found");
-				log.info("!!WARNING:Please locate your custom home.properties on IDEMPIERE_HOME.");
+				log.info("!!WARNING:Please locate your custom home.properties on SLEEKTIV_HOME.");
 			}
 			loadOK = false;
 			try (InputStream fis = Prop.class.getResourceAsStream(HOME_PROPERTY_FILE)){

@@ -52,7 +52,7 @@
 				<artifactId>tycho-surefire-plugin</artifactId>
 				<configuration>
 					<argLine>
-						-DIDEMPIERE_HOME=${idempiere.home} ${p1} ${p2} ${p3} ${p4} ${p5}
+						-DSLEEKTIV_HOME=${idempiere.home} ${p1} ${p2} ${p3} ${p4} ${p5}
 					</argLine>
 					<testRuntime>default</testRuntime>
 					<skipTests>${skipTests}</skipTests>

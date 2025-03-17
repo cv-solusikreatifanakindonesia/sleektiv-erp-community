@@ -2,12 +2,12 @@
 #
 # $Id: RUN_ImportIdempiere.sh,v 1.9 2005/01/22 21:59:15 jjanke Exp $
 
-if [ "$IDEMPIERE_HOME" ]; then
-    cd "$IDEMPIERE_HOME"/utils || (echo "Cannot cd $IDEMPIERE_HOME/utils"; exit 1)
+if [ "$SLEEKTIV_HOME" ]; then
+    cd "$SLEEKTIV_HOME"/utils || (echo "Cannot cd $SLEEKTIV_HOME/utils"; exit 1)
 fi
 export ID_ENV=Server
 . ./myEnvironment.sh
-echo Import idempiere - "$IDEMPIERE_HOME" \("$ADEMPIERE_DB_NAME"\)
+echo Import idempiere - "$SLEEKTIV_HOME" \("$ADEMPIERE_DB_NAME"\)
 
 SUFFIX=""
 SYSUSER=system
@@ -17,12 +17,12 @@ then
     SYSUSER=postgres
 fi
 
-echo Re-Create idempiere User and import "$IDEMPIERE_HOME"/data/Adempiere${SUFFIX}.dmp - \("$ADEMPIERE_DB_NAME"\)
+echo Re-Create idempiere User and import "$SLEEKTIV_HOME"/data/Adempiere${SUFFIX}.dmp - \("$ADEMPIERE_DB_NAME"\)
 echo "== The import will show warnings. This is OK =="
-cd "$IDEMPIERE_HOME"/data/seed || exit
+cd "$SLEEKTIV_HOME"/data/seed || exit
 jar xvf Adempiere${SUFFIX}.jar
-cd "$IDEMPIERE_HOME"/utils || exit
-ls -lsa "$IDEMPIERE_HOME"/data/seed/Adempiere${SUFFIX}.dmp
+cd "$SLEEKTIV_HOME"/utils || exit
+ls -lsa "$SLEEKTIV_HOME"/data/seed/Adempiere${SUFFIX}.dmp
 echo Press enter to continue ...
 read -r _
 

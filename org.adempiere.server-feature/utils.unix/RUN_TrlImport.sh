@@ -1,7 +1,7 @@
 #!/bin/sh
 
-if [ "$IDEMPIERE_HOME" ]; then
-    cd "$IDEMPIERE_HOME"/utils || (echo "Cannot cd $IDEMPIERE_HOME/utils"; exit 1)
+if [ "$SLEEKTIV_HOME" ]; then
+    cd "$SLEEKTIV_HOME"/utils || (echo "Cannot cd $SLEEKTIV_HOME/utils"; exit 1)
 else
     cd "$(dirname "$0")" || (echo "Cannot cd"; exit 1)
 fi
@@ -15,7 +15,7 @@ else
 fi
 
 # $Id: RUN_TrlImport.sh,v 1.3 2005/01/22 21:59:15 jjanke Exp $
-echo    Import idempiere Translation - "$IDEMPIERE_HOME" \("$ADEMPIERE_DB_NAME"\)
+echo    Import idempiere Translation - "$SLEEKTIV_HOME" \("$ADEMPIERE_DB_NAME"\)
 
 if [ $# -gt 0 ]
 then
@@ -29,7 +29,7 @@ if [ $# -gt 1 ]
 then
     export  DIRECTORY=$2
 else
-    export  DIRECTORY=$IDEMPIERE_HOME/data/$AD_LANGUAGE
+    export  DIRECTORY=$SLEEKTIV_HOME/data/$AD_LANGUAGE
 fi
 
 cd ..

@@ -554,8 +554,8 @@ public final class Ini implements Serializable
 
 	/** System environment prefix                                       */
 	public static final String  ENV_PREFIX = "env.";
-	/** System Property Value of IDEMPIERE_HOME                          */
-	public static final String  IDEMPIERE_HOME = "IDEMPIERE_HOME";
+	/** System Property Value of SLEEKTIV_HOME                          */
+	public static final String  SLEEKTIV_HOME = "SLEEKTIV_HOME";
 
 	/** IsClient Internal marker            */
 	private static boolean      s_client = false;
@@ -640,12 +640,12 @@ public final class Ini implements Serializable
 
 	/**
 	 *  Set iDempiere Home
-	 *  @param idempiereHome IDEMPIERE_HOME
+	 *  @param idempiereHome SLEEKTIV_HOME
 	 */
 	public static void setAdempiereHome (String idempiereHome)
 	{
 		if (idempiereHome != null && idempiereHome.length() > 0)
-			System.setProperty (IDEMPIERE_HOME, idempiereHome);
+			System.setProperty (SLEEKTIV_HOME, idempiereHome);
 	}   //  setAdempiereHome
 
 	/**

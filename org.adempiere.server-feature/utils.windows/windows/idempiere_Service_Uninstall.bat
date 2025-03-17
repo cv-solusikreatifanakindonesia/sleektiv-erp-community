@@ -2,7 +2,7 @@
 
 REM Adempiere_Service_Uninstall.bat - globalqss - based on http://javaservice.objectweb.org
 
-if (%IDEMPIERE_HOME%) == () (CALL myEnvironment.bat Server) else (CALL %IDEMPIERE_HOME%\utils\myEnvironment.bat Server)
+if (%SLEEKTIV_HOME%) == () (CALL myEnvironment.bat Server) else (CALL %SLEEKTIV_HOME%\utils\myEnvironment.bat Server)
 
 NET STOP idempiere
-%IDEMPIERE_HOME%\utils\windows\idempiereService.exe -uninstall idempiere
+%SLEEKTIV_HOME%\utils\windows\idempiereService.exe -uninstall idempiere

@@ -88,7 +88,7 @@ public class KeyStoreMgt
 	private String organization;
 	
 	
-	/**	Directory below IDEMPIERE_HOME	*/
+	/**	Directory below SLEEKTIV_HOME	*/
 	public static String		KEYSTORE_DIRECTORY = "jettyhome/etc";
 	/** Name of KeyStore				*/
 	public static String		KEYSTORE_NAME = "keystore";	
@@ -466,7 +466,7 @@ public class KeyStoreMgt
 	
 	/**
 	 * 	Get Keystore File Name
-	 *	@param baseDir IDEMPIERE_HOME
+	 *	@param baseDir SLEEKTIV_HOME
 	 *	@return file name
 	 */
 	public static String getKeystoreFileName (String baseDir)

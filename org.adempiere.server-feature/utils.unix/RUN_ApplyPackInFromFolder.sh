@@ -1,7 +1,7 @@
 #!/bin/sh
 
-if [ "$IDEMPIERE_HOME" ]; then
-    cd "$IDEMPIERE_HOME"/utils || (echo "Cannot cd $IDEMPIERE_HOME/utils"; exit 1)
+if [ "$SLEEKTIV_HOME" ]; then
+    cd "$SLEEKTIV_HOME"/utils || (echo "Cannot cd $SLEEKTIV_HOME/utils"; exit 1)
 else
     cd "$(dirname "$0")" || (echo "Cannot cd "; exit 1)
 fi
@@ -15,7 +15,7 @@ else
 fi
 
 # $Id: RUN_ApplyPackInFromFolder.sh
-echo    Apply PackIn from Folder - "$IDEMPIERE_HOME" \("$ADEMPIERE_DB_NAME"\)
+echo    Apply PackIn from Folder - "$SLEEKTIV_HOME" \("$ADEMPIERE_DB_NAME"\)
 
 if [ $# -eq 1 ]
 then

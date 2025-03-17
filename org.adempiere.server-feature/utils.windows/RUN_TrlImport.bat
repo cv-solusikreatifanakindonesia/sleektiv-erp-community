@@ -1,10 +1,10 @@
 @Rem $Id: RUN_TrlImport.bat,v 1.4 2005/09/16 00:49:37 jjanke Imp $
 
-@if (%IDEMPIERE_HOME%) == () (CALL myEnvironment.bat Server) else (CALL %IDEMPIERE_HOME%\utils\myEnvironment.bat Server)
-@Title Import Translation - %IDEMPIERE_HOME% (%ADEMPIERE_DB_NAME%)
+@if (%SLEEKTIV_HOME%) == () (CALL myEnvironment.bat Server) else (CALL %SLEEKTIV_HOME%\utils\myEnvironment.bat Server)
+@Title Import Translation - %SLEEKTIV_HOME% (%ADEMPIERE_DB_NAME%)
 
 @SET AD_LANGUAGE=es_CO
-@SET DIRECTORY=%IDEMPIERE_HOME%\data\%AD_LANGUAGE%
+@SET DIRECTORY=%SLEEKTIV_HOME%\data\%AD_LANGUAGE%
 
 @echo This Procedure imports language %AD_LANGUAGE% from directory %DIRECTORY%
 @pause

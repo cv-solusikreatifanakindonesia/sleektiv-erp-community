@@ -110,7 +110,7 @@ public class ConfigurationData
 	public static final String	IDEMPIERE_ENV_FILE		= "idempiereEnv.properties";
 
 	/** Adempiere Home					*/
-	public static final String	IDEMPIERE_HOME 			= Ini.IDEMPIERE_HOME;
+	public static final String	SLEEKTIV_HOME 			= Ini.SLEEKTIV_HOME;
 	/** 				*/
 	public static final String	JAVA_HOME 				= "JAVA_HOME";
 	/** 				*/
@@ -274,7 +274,7 @@ public class ConfigurationData
 			if (loaded.containsKey(IDEMPIERE_JAVA_OPTIONS))
 				setJavaOptions((String)loaded.get(IDEMPIERE_JAVA_OPTIONS));
 			//
-			setAdempiereHome((String)p_properties.get(IDEMPIERE_HOME));
+			setAdempiereHome((String)p_properties.get(SLEEKTIV_HOME));
 			String s = (String)p_properties.get(ADEMPIERE_KEYSTOREPASS);
 			if (s == null || s.length() == 0)
 			{
@@ -472,8 +472,8 @@ public class ConfigurationData
 		if (!pass)
 			return error;
 		if (log.isLoggable(Level.INFO)) log.info("OK: AdempiereHome = " + m_adempiereHome);
-		p_properties.setProperty(IDEMPIERE_HOME, m_adempiereHome.getAbsolutePath());
-		System.setProperty(IDEMPIERE_HOME, m_adempiereHome.getAbsolutePath());
+		p_properties.setProperty(SLEEKTIV_HOME, m_adempiereHome.getAbsolutePath());
+		System.setProperty(SLEEKTIV_HOME, m_adempiereHome.getAbsolutePath());
 
 		//	KeyStore
 		String fileName = KeyStoreMgt.getKeystoreFileName(m_adempiereHome.getAbsolutePath());
@@ -1007,7 +1007,7 @@ public class ConfigurationData
 	{
 		return p_panel != null
 			? p_panel.fAdempiereHome.getText()
-			: (String)p_properties.get(IDEMPIERE_HOME);
+			: (String)p_properties.get(SLEEKTIV_HOME);
 	}	//	getAdempiereHome
 
 	/**
@@ -1019,7 +1019,7 @@ public class ConfigurationData
 		if (p_panel != null)
 			p_panel.fAdempiereHome.setText(adempiereHome);
 		else
-			updateProperty(IDEMPIERE_HOME, adempiereHome);
+			updateProperty(SLEEKTIV_HOME, adempiereHome);
 	}	//	setAdempiereHome
 
 	/**

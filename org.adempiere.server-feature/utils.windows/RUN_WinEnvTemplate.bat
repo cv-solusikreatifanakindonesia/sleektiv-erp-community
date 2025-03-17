@@ -5,5 +5,5 @@
 @Echo Setup Client Environment
 @Echo ===================================
 
-@cscript //nologo @IDEMPIERE_HOME@\utils\WinEnv.js "@IDEMPIERE_HOME@" "@JAVA_HOME@"
+@cscript //nologo @SLEEKTIV_HOME@\utils\WinEnv.js "@SLEEKTIV_HOME@" "@JAVA_HOME@"
 

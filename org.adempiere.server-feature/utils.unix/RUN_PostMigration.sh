@@ -2,8 +2,8 @@
 #
 # $Id: RUN_PostMigration.sh
 
-if [ "$IDEMPIERE_HOME" ]; then
-    cd "$IDEMPIERE_HOME"/utils || (echo "Cannot cd $IDEMPIERE_HOME/utils"; exit 1)
+if [ "$SLEEKTIV_HOME" ]; then
+    cd "$SLEEKTIV_HOME"/utils || (echo "Cannot cd $SLEEKTIV_HOME/utils"; exit 1)
 fi
 export ID_ENV=Server
 . ./myEnvironment.sh
@@ -18,7 +18,7 @@ else
   exit
 fi
 
-cd "$IDEMPIERE_HOME" || (echo "Cannot cd to $IDEMPIERE_HOME"; exit 1)
+cd "$SLEEKTIV_HOME" || (echo "Cannot cd to $SLEEKTIV_HOME"; exit 1)
 
 ./idempiere --launcher.ini setup.ini -application org.adempiere.base.PostMigration -consoleLog
 

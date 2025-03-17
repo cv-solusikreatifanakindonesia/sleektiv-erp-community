@@ -273,8 +273,8 @@ public final class Adempiere
 		s_ImplementationVersion = adempierePackage.getImplementationVersion();
 		if (s_ImplementationVendor == null)
 		{
-			s_ImplementationVendor = "Supported by iDempiere community";
-			s_ImplementationVersion = "iDempiere";
+			s_ImplementationVendor = "Sleektiv ERP Community Ver.1";
+			s_ImplementationVersion = "Sleektiv ERP Community";
 		}
 	}	//	setPackageInfo
 
