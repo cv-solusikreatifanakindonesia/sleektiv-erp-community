@@ -1,12 +1,12 @@
 <!-- ====================================================== -->
-<!-- iDempiere Distribution Setup                            -->
+<!-- Sleektiv Distribution Setup                            -->
 <!-- ====================================================== -->
 <!-- $Header: org.adempiere.server-feature/build.xml $-->
 
 <project name="setup" default="setup" basedir=".">
 
 	<description>
-	This buildfile is used to setup the idempiere Environment.
+	This buildfile is used to setup the sleektiv Environment.
 	</description>
 
 	<property environment="env" />
@@ -18,7 +18,7 @@
 	<target name="setupInit"
 		description="initialization target">
 
-		<echo message="iDempiere Server Setup ===================" />
+		<echo message="Sleektiv Server Setup ===================" />
 		<echo message="IDEMPIERE_HOME = ${env.IDEMPIERE_HOME}" />
 
 		<!-- create the time stamp and environment -->
@@ -126,6 +126,6 @@
 	<!-- Setup (Main)                                         -->
 	<!-- ==================================================== -->
 	<target name="setup" depends="setupInit, setupWin, setupNonWin"
-		description="Setup iDempiere">
+		description="Setup Sleektiv">
 	</target>
 </project>

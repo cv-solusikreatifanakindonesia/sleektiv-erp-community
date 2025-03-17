@@ -58,7 +58,7 @@
   </setupTask>
   <setupTask
       xsi:type="maven:MavenImportTask"
-      id="org.idempiere.main">
+      id="org.sleektiv.main">
     <sourceLocator
         rootFolder="${idempiere.source.location}"
         locateNestedProjects="true">
@@ -67,7 +67,7 @@
         <operand
             xsi:type="predicates:FilePredicate"
             filePattern="pom.xml"
-            contentPattern="&lt;artifactId>org.idempiere.main&lt;/artifactId>"/>
+            contentPattern="&lt;artifactId>org.sleektiv.main&lt;/artifactId>"/>
       </predicate>
     </sourceLocator>
   </setupTask>
@@ -80,7 +80,7 @@
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
     <workingSet
-        name="org.idempiere.main">
+        name="org.sleektiv.main">
       <predicate
           xsi:type="predicates:NaturePredicate"
           nature="org.eclipse.m2e.core.maven2Nature"/>

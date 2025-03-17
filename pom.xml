@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>org.idempiere.main</artifactId>
+	<artifactId>org.sleektiv.main</artifactId>
 	<packaging>pom</packaging>
 	<parent>
 		<groupId>org.idempiere</groupId>
@@ -69,5 +69,13 @@
 		<module>org.idempiere.zk.iceblue_c.theme</module>
 		<module>org.idempiere.p2.targetplatform</module>		
 	</modules>
-
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>4.0.8</version>
+			</plugin>
+		</plugins>
+	</build>
 </project>
