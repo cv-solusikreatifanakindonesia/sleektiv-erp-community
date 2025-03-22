@@ -35,7 +35,7 @@
 .adwindow-status {
 	min-height: 22px;
 	padding-top: 3px;
-	background-color: #f6fafe;
+	background-color: #fef6f6;
 }
 
 <%-- record info text, east of status bar --%>
@@ -251,11 +251,11 @@
 	position: absolute;
 }
 .adtab-form-borderlayout .z-center-body {
-	background-color: #f6fafe;
+	background-color: #fef6f6;
 }
 
 .adtab-form-borderlayout .z-grid-body {
-	background-color: #f6fafe;
+	background-color: #fef6f6;
  }
 
 <%-- title text for collapsed detail panel --%>

@@ -88,6 +88,7 @@ public class WLogin extends AbstractUIPart
 		var leftPanelConfig =  MSysConfig.getValue(MSysConfig.APPLICATION_LOGIN_LEFT_PANEL_SHOWN, "Y");
     	
         West west = layout.getWest();
+		/*
         if (west.getFirstChild() != null && west.getFirstChild().getFirstChild() != null) {
     		west.setCollapsible(true);
     		west.setSplittable(true);
@@ -99,6 +100,11 @@ public class WLogin extends AbstractUIPart
         } else {
         	west.setVisible(false);
         }
+		*/
+		west.setVisible(false);
+		west.setOpen(false);
+		west.setCollapsible(false);
+    	west.setSplittable(false);
         
         East east = layout.getEast();
         if (east.getFirstChild() != null && east.getFirstChild().getFirstChild() != null) {

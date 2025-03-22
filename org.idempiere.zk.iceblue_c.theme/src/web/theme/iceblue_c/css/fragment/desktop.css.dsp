@@ -1,7 +1,7 @@
 <%-- header --%>
 .desktop-north {
-	background-color: #C7E8FF;
-	border-bottom: 1px solid #ADDDFF !important;
+	background-color: #FFF;
+	border-bottom: 1px solid #FFF !important;
 }
 <%-- left panel for logo and global search --%>
 .desktop-header-left {
@@ -13,7 +13,7 @@
 }
 
 .desktop-header {
-	background-color: #C7E8FF;
+	background-color: transparent;
 	width: 100%;
 	height: 46px;
 	padding-left: 4px;
@@ -36,7 +36,7 @@
 	right: 1px;
 }
 .desktop-header-popup, .desktop-header-popup > .z-window-content {
-	background-color: #C7E8FF;
+	background-color:rgb(255, 199, 199);
 }
 
 .desktop-header-popup .desktop-header {
@@ -60,14 +60,14 @@
     height: auto;
 }
 .desktop-user-panel .z-toolbarbutton:hover {
-	background: #e0f2ff;
+	background: #FFE0E0;
 	color: rgba(0,0,0,0.9);
 }
 .desktop-header-username {
 	padding: 0px 4px;
 }
 .desktop-header-username:hover {
-	background: #e0f2ff;
+	background: #FFE0E0;
 	color: rgba(0,0,0,0.9);
 }
 
@@ -169,7 +169,7 @@
 	width: 200px;
 	border: none;
 	border-right: 1px solid #C5C5C5;
-	background-color: #f6fafe;
+	background-color: #fef6f6;
 	padding-top: 2px; 
 }
 .desktop-left-column + .z-west-splitter,  .desktop-left-column.z-west {
@@ -185,7 +185,7 @@
 	width: 200px;
 	border: none;
 	border-left: 1px solid #C5C5C5;
-	background-color: #f6fafe;
+	background-color: #fef6f6;
 	padding-top: 2px; 
 }
 .desktop-right-column + .z-east-splitter,  .desktop-right-column.z-east {

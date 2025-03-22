@@ -109,9 +109,10 @@ public class UserPanel implements EventListener<Event>, Composer<Component>
     	}
     	lblUserNameValue.addEventListener(Events.ON_CLICK, this);
 
-    	feedback = (LabelImageElement) component.getFellowIfAny("feedback", true);
-    	feedback.setLabel(Msg.getMsg(Env.getCtx(), "Feedback"));
-    	feedback.addEventListener(Events.ON_CLICK, this);
+    	//disable feedback feature
+		//feedback = (LabelImageElement) component.getFellowIfAny("feedback", true);
+    	//feedback.setLabel(Msg.getMsg(Env.getCtx(), "Feedback"));
+    	//feedback.addEventListener(Events.ON_CLICK, this);
 
     	preference = (LabelImageElement) component.getFellowIfAny("preference", true);
     	preference.setLabel(Msg.getMsg(Env.getCtx(), "Preference"));

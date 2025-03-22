@@ -58,7 +58,7 @@
 	border-right: 1px solid white;
 }
 .tabs .cm :hover {
-	background: #7ac8ff;
+	background: #ff7a7a;
 }
 .tabs .text {
 	line-height: 1.2em;
@@ -106,7 +106,7 @@
 	zoom: 1;
 }
 .arrow-left {
-	border-color: #0093f9 #f2f9ff #0093f9 #0093f9;
+	border-color: #F90000 #f2f9ff #F90000 #F90000;
 	border-style: solid;
 	border-width: 5px;
 	height: 0;
@@ -117,7 +117,7 @@
 	line-height: 0;
 }
 .arrow-right {
-	border-color: #0093f9 #0093f9 #0093f9 #f2f9ff;
+	border-color: #F90000 #F90000 #F90000 #f2f9ff;
 	border-style: solid;
 	border-width: 5px;
 	height: 0;
@@ -130,10 +130,10 @@
 	background-color: #f2f9ff;
 }
 .arrow-over .arrow-left {
-	border-color: #f2f9ff #0093f9 #f2f9ff #f2f9ff ;
+	border-color: #f2f9ff #F90000 #f2f9ff #f2f9ff ;
 }
 .arrow-over .arrow-right {
-	border-color: #f2f9ff #f2f9ff #f2f9ff #0093f9;
+	border-color: #f2f9ff #f2f9ff #f2f9ff #F90000;
 }
 .blue *, .red *, .green *, .purple *, .khaki * {
 	color: white;
@@ -238,7 +238,7 @@
 }
 
 .z-calendar-weekend{
-	color:#0093f9;
+	color:#F90000;
 	background:#f2f2f2
 }
 
@@ -296,7 +296,7 @@
 
 .z-calendar-selected:hover{
 	color:#008bb6;
-	background:#0093f9
+	background:#F90000
 }
 
 .z-calendar-outside{
@@ -601,7 +601,7 @@
 }
 
 .z-calendars-day-of-week-inner.z-calendars-week-today{
-	background-color:#0093f9;
+	background-color:#F90000;
 	border-color:white white white white;
 	border-style:solid;
 	border-width:1px;
@@ -612,7 +612,7 @@
 }
 
 .z-calendars-week-day.z-calendars-week-today{
-	background-color:#0093f9
+	background-color:#F90000
 }
 
 .z-calendars-week-day{
@@ -697,7 +697,7 @@
 
 .z-calendars-day-of-month-bg td:hover{
 	cursor: pointer;
-    background: #0093f9 !important;
+    background: #F90000 !important;
 }
 
 .z-calendars-day-of-month-body{
@@ -740,7 +740,7 @@
 }
 
 .z-calendars-month-date.z-calendars-week-today>.z-calendars-month-date-cnt{
-	 background-color:#0093f9 !important;
+	 background-color:#F90000 !important;
 	 border-radius: 2px;
 	 color: #ffffff;
 	 font-weight: bold;
@@ -1006,7 +1006,7 @@
 }
 
 a.refresh > span.z-toolbarbutton-content {
-	background-color: #0093f9;
+	background-color: #F90000;
     color: white;
     padding: 5px;
 }

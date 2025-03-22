@@ -656,6 +656,14 @@ public class HelpController
 
 				addContextHelpMenupopup(node, baseContent, translatedContent);
 			}
+			else if (ctxType.equals(X_AD_CtxHelp.CTXTYPE_Home)) 
+        	{
+        		translatedContent.append("<p><em>(" + Msg.getMsg(Env.getCtx(), "GettingStartedMessage") + ")</em></p>");
+        		baseContent.append("<p><em>(" + Msg.getMsg(Language.getBaseAD_Language(), "GettingStartedMessage") + ")</em></p>");
+        		sb.append(translatedContent.toString());
+
+        		addContextHelpMenupopup(null, baseContent, translatedContent);
+        	}
         	else
         	{
         		translatedContent.append("<p><em>(" + Msg.getMsg(Env.getCtx(), "NotAvailable") + ")</em></p>");

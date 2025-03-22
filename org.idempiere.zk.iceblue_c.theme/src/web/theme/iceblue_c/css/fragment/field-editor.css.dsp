@@ -60,7 +60,7 @@
 }
 .z-chosenbox:has(> input:focus) {
   background: #FFFFCC !important;
-  border-color: #0093F9 !important;
+  border-color: #EC3C3C !important;
 }
 <%-- include/exclude icon for chosenbox --%>
 .editor-box + .btn-negate.z-button > .z-icon-ExcludeSelected::before,
@@ -192,7 +192,7 @@ span.grid-combobox-editor {
 	border-color: #A8A8A8;
 }
 .html-field:focus {
-	border-color: #0093F9;
+	border-color: #EC3C3C;
 }
 
 <%-- dashboard content editor --%>
@@ -229,7 +229,7 @@ span.grid-combobox-editor {
     border: none;
 }
 .z-toolbarbutton:has(> span > i.z-icon-History):hover {
-	background-color: #7ac8ff !important;
+	background-color: #ff7a7a !important;
 }
 .date-picker-calendar-button {
     position: absolute;
@@ -276,7 +276,7 @@ span.grid-combobox-editor {
     flex: auto;
 }
 .recordid-editor .z-toolbarbutton:hover {
-	background-color: #7ac8ff
+	background-color: #ff7a7a
 }
 
 <%-- font icon for field button --%>

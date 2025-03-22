@@ -480,7 +480,7 @@ public class LoginPanel extends Window implements EventListener<Event>
 	private void openLoginHelp() {
 		String lang = (String) lstLanguage.getSelectedItem().getValue();
 		lang = lang.substring(0, 2);
-		String helpURL = MSysConfig.getValue(MSysConfig.LOGIN_HELP_URL, "https://wiki.idempiere.org/{lang}/Login_Help");
+		String helpURL = MSysConfig.getValue(MSysConfig.LOGIN_HELP_URL, "https://sleektiv.com/hubungi-kami/?lang={lang}");
 		if (helpURL.contains("{lang}")) {
 			String rawURL = helpURL;
 			helpURL = Util.replace(rawURL, "{lang}", lang);

@@ -10,7 +10,7 @@
 }
 .menu-href:hover, .menu-href:active {
 	text-decoration: none !important;
-	background: #e0f2ff;
+	background: #FFE0E0;
 	color: rgba(0,0,0,0.9);
 }
 .menu-href img {

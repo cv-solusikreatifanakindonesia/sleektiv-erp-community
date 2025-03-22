@@ -74,7 +74,7 @@
 .z-west-slide > .z-north-collapsed, .z-west-slide > .z-south-collapsed, .z-west-slide > .z-west-collapsed, .z-west-slide > .z-center-collapsed, .z-west-slide > .z-east-collapsed, 
 .z-center-slide > .z-north-collapsed, .z-center-slide > .z-south-collapsed, .z-center-slide > .z-west-collapsed, .z-center-slide > .z-center-collapsed, .z-center-slide > .z-east-collapsed, 
 .z-east-slide > .z-north-collapsed, .z-east-slide > .z-south-collapsed, .z-east-slide > .z-west-collapsed, .z-east-slide > .z-center-collapsed, .z-east-slide > .z-east-collapsed {
-  background: #e0f2ff;
+  background: #FFE0E0;
 }
 .z-south-slide > .south-collapsible-with-title.z-south > .z-south-header {
 	display: none;
@@ -104,7 +104,7 @@
 }
 
 .z-east-splitter, .z-west-splitter, .z-north-splitter, .z-south-splitter {
-	background-color: #F9FCFF;
+	background-color: transparent !important;
 }
 
 .z-south-icon, .z-north-icon, .z-north-icon.z-icon-ellipsis-h, .z-south-icon.z-icon-ellipsis-h {

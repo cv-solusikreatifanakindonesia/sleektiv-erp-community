@@ -90,7 +90,7 @@ input:focus, textarea:focus, .z-combobox-input:focus, z-datebox-input:focus, sel
   	padding: 0px;
 }
 .z-datebox-button:hover {
-  	background-color: #7ac8ff !important;
+  	background-color: #ff7a7a !important;
 }
 .z-datebox-button > i {
 	line-height: 24px;
@@ -109,7 +109,7 @@ input:focus, textarea:focus, .z-combobox-input:focus, z-datebox-input:focus, sel
 }
 
 input[type="checkbox"]:checked {
-    background-color: #7ac8ff;
+    background-color: #ff7a7a;
 }
 
 <%-- focus indicator for checkbox --%>

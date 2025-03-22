@@ -42,6 +42,7 @@
 	display: flex; 
 	flex-direction: column; 
 	justify-content: stretch;
+	background: #F9B9B9 !important;
 }
 .dashboard-widget > .z-panel-body {
 	flex-grow: 1;
@@ -116,7 +117,7 @@
 	color: #333333 !important;
 }
 .recentitems-box A.menu-href:hover {
-	background: #e0f2ff;
+	background: #FFE0E0;
 	text-decoration: none !important;
 }
 
@@ -181,7 +182,7 @@
 	line-height: 24px;
 }
 .views-box .z-toolbarbutton:hover {
-	background: #e0f2ff;
+	background: #FFE0E0;
 	color: rgba(0,0,0,0.9);
 }
 .views-box .link img {

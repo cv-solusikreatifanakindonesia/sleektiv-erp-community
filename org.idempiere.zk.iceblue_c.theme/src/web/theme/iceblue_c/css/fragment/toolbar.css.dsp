@@ -88,7 +88,7 @@
 }
 .z-toolbarbutton-checked {
     color: #fff !important;
-    background-color: #7ac8ff !important;
+    background-color: #ff7a7a !important;
 }
 .z-toolbarbutton[disabled], .z-toolbarbutton[disabled]:hover {
 	background-color: transparent;
@@ -113,7 +113,7 @@
 }
 .font-icon-toolbar-button.toolbar-button:hover {
 	color: #fff;
-	background-color: #7ac8ff;
+	background-color: #ff7a7a;
 }
 .font-icon-toolbar-button.toolbar-button, .font-icon-toolbar-button.toolbar-button .z-toolbarbutton-content {
 	display:inline-flex;

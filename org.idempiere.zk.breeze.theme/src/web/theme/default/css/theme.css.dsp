@@ -7,22 +7,47 @@ html,body {
 	padding: 0;
 	height: 100%;
 	width: 100%;
-	background-color: #D4E3F4;
+	background-color: #FFC5C5;
 	color: #333;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 	overflow: hidden;
+}
+
+.z-page .z-window {
+  padding: 0px;
+  background: transparent !important;
+}
+
+.z-page .login-window .z-window-content {
+	background: transparent !important;
 }
 
 .z-html p{
 	margin:0px;
 }
 
+.z-button {
+	background-color:rgb(249, 0, 0) !important;
+}
+
+.z-tab-selected{
+	border-bottom: 2px solid #F9B9B9;
+}
+
+.z-tab-selected .z-tab-text{
+	color: #F9B9B9;
+}
+
+.z-icon-Help,.btn-help, .btn-cancel, .z-icon-Cancel {
+  color: #fff !important;
+}
+
 [class*="z-"]:not([class*="z-icon-"]):not([class*="z-group-icon-"]) {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
 @media screen and (min-device-width: 2500px) {
 	[class*="z-"]:not([class*="z-icon-"]):not([class*="z-group-icon-"]) {
-		font-size: 15px;
+		font-size: 14px;
 	}
 }
 @media screen and (max-device-width: 2499px) {
@@ -32,12 +57,12 @@ html,body {
 }
 @media screen and (max-device-width: 1899px) {
 	[class*="z-"]:not([class*="z-icon-"]):not([class*="z-group-icon-"]) {
-		font-size: 13px;
+		font-size: 14px;
 	}
 }
 @media screen and (max-device-width: 1399px) {
 	[class*="z-"]:not([class*="z-icon-"]):not([class*="z-group-icon-"]) {
-		font-size: 12px;
+		font-size: 14px;
 	}
 }
 

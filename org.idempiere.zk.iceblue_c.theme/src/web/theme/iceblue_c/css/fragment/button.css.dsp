@@ -13,7 +13,7 @@
 .z-button-os:hover {
     color: #FFFFFF;
     border-color: transparent;
-    background-color: #7ac8ff;
+    background-color: #ff7a7a;
 }
 
 .z-button:focus {
@@ -56,10 +56,6 @@
 .btn-cancel:hover, .btn-help:hover {
     background: #e5e5e5;
     color: #1d1d1d;
-}
-
-.z-icon-Help, .z-icon-Cancel {
-    color: #111111 !important;
 }
 
 .z-button [class^="z-icon-"][disabled],

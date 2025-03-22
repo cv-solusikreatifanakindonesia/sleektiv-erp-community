@@ -1,21 +1,31 @@
 .login-window {
-	background-color: #c7e8ff;
+	background: repeating-conic-gradient(
+		rgba(128, 128, 128, 0.1) 0% 25%, 
+		rgba(255, 255, 255, 0.1) 25% 50%
+	) 0 / 20px 20px;
 }
 
 .login-window .z-window-content {
-	background-color: #c7e8ff;
+	background: repeating-conic-gradient(
+		rgba(128, 128, 128, 0.1) 0% 25%, 
+		rgba(255, 255, 255, 0.1) 25% 50%
+	) 0 / 20px 20px;
+}
+
+.login-box-header{
+	display:none;
 }
 
 .login-box-body {
 	width: 720px;
-	background-color: white;
+	background-color: transparent;
 	padding: 0px 5px 0px 0px;
 	margin: 0;
 	text-align: center;
 }
 
 .login-box-header {
-	background-color: white;
+	background-color: transparent;
 	width: 720px;
 	border-radius: 10px 10px 0px 0px;
 	padding-left: 30px;
@@ -42,7 +52,7 @@
 .login-box-footer {
 	height: 130px;
 	width: 720px;
-	background-color: white;
+	background-color: transparent;
 	border-radius: 0px 0px 10px 10px;
 	padding-left: 30px;
   	padding-right: 30px;

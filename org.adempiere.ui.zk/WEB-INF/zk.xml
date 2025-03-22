@@ -132,7 +132,7 @@
     </library-property>
 	<preference>
     	<name>org.zkoss.zk.ui.WebApp.name</name>
-    	<value>iDempiere</value>
+    	<value>Sleektiv ERP Community | Version 1</value>
 	</preference>
     <library-property>
         <name>org.zkoss.zk.ui.uuidRecycle.disabled</name>

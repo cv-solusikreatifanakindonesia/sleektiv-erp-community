@@ -1,9 +1,15 @@
 .login-window {
-	background-color: #E5E5E5;
+	background: repeating-conic-gradient(
+		rgba(128, 128, 128, 0.1) 0% 25%, 
+		rgba(255, 255, 255, 0.1) 25% 50%
+	) 0 / 20px 20px;
 }
 
 .login-window .z-window-content {
-	background-color: #E5E5E5;
+	background: repeating-conic-gradient(
+		rgba(128, 128, 128, 0.1) 0% 25%, 
+		rgba(255, 255, 255, 0.1) 25% 50%
+	) 0 / 20px 20px;
 }
 
 .login-box-body {
