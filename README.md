@@ -7,4 +7,4 @@ Don't forget to check our [code of conduct](CODE_OF_CONDUCT.md) and If you have 
 ## Credits:
 - [IDempiere](https://idempiere.org)
 - [ADempiere](https://www.adempiere.io/)
-- [Compiere]
+- Compiere
